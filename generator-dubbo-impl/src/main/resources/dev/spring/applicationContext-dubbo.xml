@@ -6,7 +6,7 @@
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
     http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service ref="generatorService" interface="com.firebugsoft.generator.dubbo.api.IGeneratorService" timeout="3000" />
+    <!-- provider -->
+    <dubbo:service ref="generatorService" interface="com.firebugsoft.generator.dubbo.api.IGeneratorService" />
 
 </beans>

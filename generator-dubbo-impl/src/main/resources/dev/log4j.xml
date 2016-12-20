@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="info" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/var/log/generator-dubbo-impl/info.log"/>
+        <param name="DatePattern" value="'.'yyyyMMdd'.log'"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%p]-[%t]-[%l] %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="info"/>
+            <param name="levelMax" value="info"/>
+            <param name="AcceptOnMatch" value="true"/>
+        </filter>
+    </appender>
+    <appender name="error" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/var/log/generator-dubbo-impl/error.log"/>
+        <param name="DatePattern" value="'.'yyyyMMdd'.log'"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%p]-[%t]-[%l] %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="error"/>
+            <param name="levelMax" value="error"/>
+            <param name="AcceptOnMatch" value="true"/>
+        </filter>
+    </appender>
+    
+    <root>
+        <appender-ref ref="info" />
+        <appender-ref ref="error" />
+    </root>
+</log4j:configuration>

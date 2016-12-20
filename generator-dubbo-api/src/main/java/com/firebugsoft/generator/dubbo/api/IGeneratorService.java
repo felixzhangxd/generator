@@ -9,4 +9,6 @@ public interface IGeneratorService {
      * 生成主键
      */
     long pk();
+    
+    long test(long sleep);
 }
